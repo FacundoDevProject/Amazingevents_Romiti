@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Past Events</title>
+        <link rel="stylesheet" href="../styles/style.css">
+        <script src="./showData.js"></script>
+        <link rel="shortcut icon" href="../images/Logo%20Amazing%20Events.ico"
+            type="image/x-icon">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+            crossorigin="anonymous">
+    </head>
+    <body>
+        <header>
+            <div class="container-fluid d-flex justify-content-around p-5">
+                <img class="logo" src="../images/Logo%20Amazing%20Events.png"
+                    alt="">
+                <nav>
+                    <a class="btn btn-primary" href="/index.html" role="button">Home</a>
+                    <a class="btn btn-primary" href="./upcomingevents.html"
+                        role="button">Upcoming
+                        Events</a>
+                    <a class="btn btn-primary" href="#"
+                        role="button">Past
+                        Events</a>
+                    <a class="btn btn-primary" href="./contact.html"
+                        role="button">Contact</a>
+                    <a class="btn btn-primary" href="./stats.html"
+                        role="button">Stats</a>
+                </nav>
+            </div>
+        </header>
+        <div class="container-fluid">
+            <div id="carouselAEvents" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="../images/cinemabanner.jpg"
+                            class="d-block
+                            w-100"
+                            alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../images/costumebanner.jpg"
+                            class="d-block
+                            w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../images/foodfairbanner.jpg"
+                            class="d-block
+                            w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../images/marathonbanner.jpg"
+                            class="d-block
+                            w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../images/museumbanner.jpg"
+                            class="d-block
+                            w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../images/musicbanner.jpg"
+                            class="d-block
+                            w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button"
+                    data-bs-target="#carouselAEvents" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"
+                        aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button"
+                    data-bs-target="#carouselAEvents" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"
+                        aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+            <div class="container-fluid d-flex justify-content-around">
+                <div class="Filters">
+                    <div class="row p-2">
+                        <div class="col-6">
+                            <form class="d-flex gap-2" action="./showData.js"
+                                method="get">
+                                <input type="checkbox" id="category1"
+                                    name="category1">
+                                <label for="category1">Category</label>
+                                <input type="checkbox" id="category2"
+                                    name="category2">
+                                <label for="category2">Category</label>
+                                <input type="checkbox" id="category3"
+                                    name="category3">
+                                <label for="category3">Category</label>
+                                <input type="checkbox" id="category4"
+                                    name="category4">
+                                <label for="category4">Category</label>
+                                <input type="checkbox" id="category5"
+                                    name="category5">
+                                <label for="category5">Category</label>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="row p-2">
+                    <nav class="navbar">
+                        <div class="container-fluid">
+                            <form class="d-flex">
+                                <input class="form-control me-2" type="search"
+                                    placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-success"
+                                    type="submit">Search</button>
+                            </form>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        <div class="mx-auto d-flex justify-content-around">
+            <div class="row row-cols-1 row-cols-md-2 gap-4 m-4 Cards">
+                <div class="card" style="width: 18rem;">
+                    <img src="../images/Cinema.jpg" class="card-img-top"
+                        alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Titulo Evento</h5>
+                        <p class="card-text">Descripcion Evento</p>
+                        <p>Precio</p>
+                        <a href="#" class="btn btn-primary">Link a evento</a>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="../images/Costume_Party.jpg"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Titulo Evento</h5>
+                        <p class="card-text">Descripcion Evento</p>
+                        <p>Precio</p>
+                        <a href="#" class="btn btn-primary">Link a evento</a>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="../images/Food_Fair.jpg"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Titulo Evento</h5>
+                        <p class="card-text">Descripcion Evento</p>
+                        <p>Precio</p>
+                        <a href="#" class="btn btn-primary">Link a evento</a>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="../images/Marathon.jpg" class="card-img-top"
+                        alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Titulo Evento</h5>
+                        <p class="card-text">Descripcion Evento</p>
+                        <p>Precio</p>
+                        <a href="#" class="btn btn-primary">Link a evento</a>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="../images/Museum_Tour.jpg"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Titulo Evento</h5>
+                        <p class="card-text">Descripcion Evento</p>
+                        <p>Precio</p>
+                        <a href="#" class="btn btn-primary">Link a evento</a>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="../images/Music_Concert.jpg"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Titulo Evento</h5>
+                        <p class="card-text">Descripcion Evento</p>
+                        <p>Precio</p>
+                        <a href="#" class="btn btn-primary">Link a evento</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        <footer>
+            <div class="container-fluid">
+                <div class="row p-5 bg-secondary">
+                    <div class=" col-6">
+                        <div>
+                            <img src="../images/instagram.ico"
+                                alt="instagram"
+                                class="rounded-circle">
+                            <img src="../images/facebook.ico"
+                                alt="facebook"
+                                class="rounded-circle">
+                            <img src="../images/whatsapp.ico"
+                                alt="whatsapp"
+                                class="rounded-circle">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="col-6">
+                            <h2 class="cohort">FE06-TN</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+            crossorigin="anonymous"></script>
+        <script src="./showData.js"></script>
+    </body>
+</html>
