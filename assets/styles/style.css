@@ -123,3 +123,12 @@ table {
     width: 100%;
     height: 150px;
 }
+
+.card-body{
+    border: 2px solid rgb(207, 22, 207);
+    background-color: rgb(129, 129, 129);
+}
+
+h4{
+    margin-left: 1rem;
+}
