@@ -21,8 +21,17 @@ header {
 
 /**CARDS**/
 
+#card {
+    background-color: rgb(129, 129, 129) !important;
+}
+
 #cardcontainer {
-    width: 100%;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 0;
 }
 
 .card {
@@ -32,18 +41,23 @@ header {
 }
 
 .cardstyle {
+    border: 2px solid rgb(207, 22, 207);
     width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .card-img-top{
+    border: 2px solid rgb(207, 22, 207);
     width: 100%;
     height: 150px;
 }
 
 .stylecard {
+    border: 2px solid rgb(207, 22, 207);
     flex-wrap: nowrap !important;
 }
-
 
 /**FOOTER**/
 .rounded-circle {
@@ -78,6 +92,7 @@ table {
 .rounded-start {
     width: 100%;
     height: 4rem;
+    background-color: rgb(129, 129, 129) !important;
 }
 
 /**buttons**/
@@ -86,3 +101,25 @@ table {
     margin: 0.1cm;
 }
 
+#checkboxes {
+    display: flex;
+    white-space: nowrap;
+    position: absolute;
+}
+
+#card-big {
+    border: 2px solid rgb(207, 22, 207);
+    background-color: rgb(129, 129, 129) !important;
+    display: flex;
+    gap: 2;
+    border-radius: 50%;
+    padding: 3cm;
+    justify-content: center;
+    align-items: center;;
+}
+
+#card{
+    border: 2px solid rgb(207, 22, 207);
+    width: 100%;
+    height: 150px;
+}
