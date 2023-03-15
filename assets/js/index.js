@@ -15,6 +15,7 @@ async function getData() {
         let apiUrl = './assets/js/amazingevents.json'
         let response = await fetch(apiUrl);
         let data = await response.json();
+        console.log(data);
         eventsarray = data.events;
         categories = createCategories(eventsarray);
         armarCard(eventsarray, container);
@@ -24,21 +25,13 @@ async function getData() {
         console.log(error);
     }
 }
-
 getData()
-
-
 /**CATEGORIES ARRAY + CHECKBOXES */
-
-
 const createCategories = (data) => {
     let categories = data.map(category => category.category)
     let categoriesUnrepeat = [...(new Set(categories))]
     return categoriesUnrepeat
 }
-
-
-
 const createCheck = (categories, $checkboxes) => {
     categories.forEach(category => {
         let div = document.createElement('div')
@@ -50,7 +43,6 @@ const createCheck = (categories, $checkboxes) => {
         $checkboxes.appendChild(div)
     })
 }
-
 const filterCheck = (array) => {
     let checked = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'));
     let reChecked = checked.map(e => e.value.toLocaleLowerCase())
