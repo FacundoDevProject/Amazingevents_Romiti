@@ -1,5 +1,3 @@
-import data from "./data.js"
-
 let eventcard = document.getElementById("cardcontainer");
 /**RUTA */
 const queryString = location.search
@@ -7,7 +5,20 @@ const queryString = location.search
 const params = new URLSearchParams(queryString)
 /*ID */
 const id = params.get("id")
-const selectedEvent = data.events.find(event => event._id == id)
+
+
+let data;
+
+try {
+    let apiUrl = '../assets/js/amazingevents.json'
+    let response = await fetch(apiUrl);
+    data = await response.json();
+    const selectedEvent = data.events.find(event => event._id == id)
+    armarCard(selectedEvent, eventcard);
+} catch (error) {
+    console.log(error);
+}
+console.log(data);
 
 function armarCard(card, container) {
     container.innerHTML = "";
