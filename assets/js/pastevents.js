@@ -105,7 +105,7 @@ $checkboxes.addEventListener('change', () => {
     if (filterData.length === 0) {
         eventcard.innerHTML =
             `
-        <h4>No se encontraron resultados</h4>
+        <h4>No results</h4>
         `
     } else {
         container.innerHTML = "";
@@ -118,7 +118,7 @@ $search.addEventListener('keyup', (e) => {
     if (filterData.length === 0) {
         container.innerHTML =
             `
-        <h4>No se encontraron resultados</h4>
+        <h4>No results</h4>
         `
     } else {
         container.innerHTML = "";
