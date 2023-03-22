@@ -15,7 +15,6 @@ async function getData() {
         let apiUrl = './assets/js/amazingevents.json'
         let response = await fetch(apiUrl);
         let data = await response.json();
-        console.log(data);
         eventsarray = data.events;
         categories = createCategories(eventsarray);
         armarCard(eventsarray, container);
@@ -47,7 +46,6 @@ const filterCheck = (array) => {
     let checked = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'));
     let reChecked = checked.map(e => e.value.toLocaleLowerCase())
     let filterChecks = array.filter(element => reChecked.includes(element.category.toLowerCase()))
-    console.log(filterChecks);
     if (filterChecks.length > 0) {
         return filterChecks
     } else {

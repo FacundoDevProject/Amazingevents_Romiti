@@ -14,10 +14,11 @@ async function getData() {
         eventsarray = data.events;
         currentDate = data.currentDate;
         categories = createCategories(eventsarray);
-        let maxAttendanceEvent = eventsarray.sort((a, b) => ((b.assistance) / (b.capacity)) - ((a.assistance) / (a.capacity)))[0];
-        let minAttendanceEvent = eventsarray.sort((a, b) => ((a.assistance) / (a.capacity)) - ((b.assistance) / (b.capacity)))[0];
+        let maxAttendanceEvent = eventsarray.sort((a, b) => ((b.assistance ? b.assistance: b.estimate) / (b.capacity)) - ((a.assistance ? a.assistance: a.estimate) / (a.capacity)))[0];
+        let minAttendanceEvent = eventsarray.sort((a, b) => ((a.assistance ? a.assistance: a.estimate) / (a.capacity)) - ((b.assistance ? b.assistance: b.estimate) / (b.capacity)))[0];
         let capacityEvent = maxCapacityEvent(eventsarray);
         addFile(maxAttendanceEvent.name, minAttendanceEvent.name, capacityEvent.name, table);
+        /* createFirstCategoryTable(eventsarray) */
         createCategoryTable(eventsarray, categories, currentDate)
         createCategoryTable2(eventsarray, categories, currentDate)
 
@@ -60,6 +61,7 @@ function addFile(para1, para2, para3, container) {
 }
 
 
+
 /* TABLA NUMERO 2 */
 
 function createCategoryTable(eventsarray, categories, currentDate) {
@@ -70,11 +72,11 @@ function createCategoryTable(eventsarray, categories, currentDate) {
         let eventPerCategory = 0;
         for (let i = 0; i < filteredEvents.length; i++) {
             eventsRevenueEstimate += filteredEvents[i].price * filteredEvents[i].assistance;
-            eventPerCategory+= 1;
+            eventPerCategory += 1;
         }
         let eventsPercentageAtt = 0;
         filteredEvents.forEach(event => {
-            let eventAtt = ((event.assistance*100)/event.capacity)/eventPerCategory;
+            let eventAtt = ((event.assistance * 100) / event.capacity) / eventPerCategory;
             eventsPercentageAtt += eventAtt;
         }
         )
@@ -82,7 +84,7 @@ function createCategoryTable(eventsarray, categories, currentDate) {
             name: category,
             quantity: eventPerCategory,
             revenue: `$${eventsRevenueEstimate}`,
-            attendance: `${eventsPercentageAtt.toFixed(2)}%`,  
+            attendance: `${eventsPercentageAtt.toFixed(2)}%`,
         }
         addFile(newObject.name, newObject.revenue, newObject.attendance, secondTable);
     })
@@ -99,11 +101,11 @@ function createCategoryTable2(eventsarray, categories, currentDate) {
         let eventPerCategory = 0;
         for (let i = 0; i < filteredEvents.length; i++) {
             eventsRevenueEstimate += filteredEvents[i].price * filteredEvents[i].estimate;
-            eventPerCategory+= 1;
+            eventPerCategory += 1;
         }
         let eventsPercentageAtt = 0;
         filteredEvents.forEach(event => {
-            let eventAtt = ((event.estimate*100)/event.capacity)/eventPerCategory;
+            let eventAtt = ((event.estimate * 100) / event.capacity) / eventPerCategory;
             eventsPercentageAtt += eventAtt;
         }
         )
@@ -111,7 +113,7 @@ function createCategoryTable2(eventsarray, categories, currentDate) {
             name: category,
             quantity: eventPerCategory,
             revenue: `$${eventsRevenueEstimate}`,
-            attendance: `${eventsPercentageAtt.toFixed(2)}%`,  
+            attendance: `${eventsPercentageAtt.toFixed(2)}%`,
         }
         addFile(newObject.name, newObject.revenue, newObject.attendance, thirdTable);
     })

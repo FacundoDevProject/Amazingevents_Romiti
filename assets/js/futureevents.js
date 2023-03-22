@@ -103,7 +103,7 @@ const filterAndPrint = (array) => {
 $checkboxes.addEventListener('change', () => {
     let filterData = filterAndPrint(eventsarray)
     if (filterData.length === 0) {
-        eventcard.innerHTML =
+        container.innerHTML =
             `
         <h4>No results</h4>
         `
